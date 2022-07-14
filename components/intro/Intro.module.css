@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.imageDiv {
+    max-height: 10em;
+    max-width: 10em;
+    animation: scrollImageDivAnimation 1s 1 forwards;
+    transform: translate(0%, 300%);
+}
+
+@keyframes scrollImageDivAnimation {
+    100% {
+      transform: translate(0%, 0%);
+    }
+}
+
+.contentDiv {
+    text-align: center;
+    animation: scrollContentDivAnimation 1s 1 forwards;
+    transform: translate(0%, 800%);
+    animation-delay: 1s;
+}
+
+@keyframes scrollContentDivAnimation {
+    100% {
+      transform: translate(0%, 0%);
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .container {
+        flex-direction: row;
+    }
+}

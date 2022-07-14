@@ -1,0 +1,26 @@
+.square {
+    position: absolute; 
+    height: 1.5em;
+    width: 1.5em;
+    transition: 5s;
+    opacity: 0.5;
+    background-color: #32af8d;
+}
+
+.squareBig {
+    position: absolute; 
+    height: 2.5em;
+    width: 2.5em;
+    transition: 4s;
+    opacity: 0.5;
+    background-color: #fff44f;
+}
+
+.triangle {
+    position: absolute; 
+    transition: 6s;
+    opacity: 0.5;
+    border-left: 1.25em solid transparent;
+    border-right: 1.25em solid transparent;
+    border-bottom: 2.5em solid #800020;
+}
