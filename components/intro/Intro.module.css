@@ -6,16 +6,22 @@
     min-height: 100vh;
 }
 
+.heyThere::before {
+    content: '\1F44B  ';
+}
+
 .imageDiv {
     max-height: 10em;
     max-width: 10em;
     animation: scrollImageDivAnimation 1s 1 forwards;
     transform: translate(0%, 300%);
+    opacity: 0;
 }
 
 @keyframes scrollImageDivAnimation {
     100% {
       transform: translate(0%, 0%);
+      opacity: 1;
     }
 }
 
@@ -24,11 +30,13 @@
     animation: scrollContentDivAnimation 1s 1 forwards;
     transform: translate(0%, 800%);
     animation-delay: 1s;
+    opacity: 0;
 }
 
 @keyframes scrollContentDivAnimation {
     100% {
       transform: translate(0%, 0%);
+      opacity: 1;
     }
 }
 

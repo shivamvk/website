@@ -9,7 +9,7 @@ export const Intro: React.FC<{}> = () => {
         <Image alt="shivam bhasin" src={MEIMAGE} />
       </div>
       <div className={styles.contentDiv}>
-        <h3>&#128075; Hey there, I am</h3>
+        <h3 className={styles.heyThere}>Hey there, I am</h3>
         <h1>Shivam Bhasin</h1>
         <h3>Explorer. Learner. Writer.</h3>
       </div>

@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding: 1rem;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    text-align: center;
+}
+
+.title::before {
+    content: '\1F4A1';
+}
+
+.text {
+    color: white;
+    text-align: center;
+    margin: 1em 5em;
+}
+
+.text::before {
+    content: open-quote;
+}
+
+.text::after {
+    content: close-quote;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 70vw;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.6rem;
+}

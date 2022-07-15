@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { Confetti } from "../confetti";
 import { Intro } from "../intro";
+import { Lotd } from "../lotd";
 import { Onboarding } from "../onboarding";
 
 export const Home: React.FC<{}> = () => {
@@ -18,6 +19,7 @@ export const Home: React.FC<{}> = () => {
         <div>
           <Intro />
           <Confetti />
+          <Lotd />
         </div>
       )}
     </div>
