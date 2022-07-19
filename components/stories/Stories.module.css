@@ -1,0 +1,54 @@
+.container {
+    padding: 2rem 1rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.storiesContainer {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.storyContainer {
+    border-radius: 0.75rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 0.9rem 0.9rem 2.2rem 0.9rem;
+}
+
+.storyImage {
+    border-radius: 0.75rem;
+}
+
+.storyTitle {
+    margin-top: 1.5rem;
+}
+
+.storySubheading {
+    margin-top: 1rem;
+}
+
+.storyButtonText::after {
+    content: "    \2192";
+}
+
+@media only screen and (min-width: 500px){
+    .storiesContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 750px){
+    .storiesContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1100px){
+    .storiesContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

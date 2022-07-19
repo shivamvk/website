@@ -1,24 +1,13 @@
-import { useEffect } from "react";
 import { ILearning } from "../../interfaces/Lotd";
+import { getLotd } from "../../services/learnings";
 import styles from "./Lotd.module.css";
 
-const DUMMY_DATA: ILearning = {
-  title: "Learning of the day",
-  text: `Immediately after every macrotask, the JavaScript engine executes all
-    tasks from microtask queue, prior to running any other macrotasks or
-    rendering or anything else.`,
-  tags: ["javascript", "eventloop"],
-};
+export interface IProps {
+  data: ILearning;
+}
 
-export const Lotd: React.FC<{}> = () => {
-  const { title, text, tags } = DUMMY_DATA;
-
-  useEffect(() => {
-    const getData = async () => {
-      await fetch("./api/learning");
-    };
-    getData();
-  }, []);
+export const Lotd: React.FC<IProps> = ({ data }) => {
+  const { title, text, tags } = data;
 
   return (
     <div className={styles.container}>
