@@ -1,12 +1,12 @@
+import React from "react";
 import { ILearning } from "../../interfaces/Lotd";
-import { getLotd } from "../../services/learnings";
 import styles from "./Lotd.module.css";
 
 export interface IProps {
   data: ILearning;
 }
 
-export const Lotd: React.FC<IProps> = ({ data }) => {
+export const Lotd: React.FC<IProps> = React.memo(({ data }) => {
   const { title, text, tags } = data;
 
   return (
@@ -24,4 +24,6 @@ export const Lotd: React.FC<IProps> = ({ data }) => {
       </div>
     </div>
   );
-};
+});
+
+Lotd.displayName = "Lotd";

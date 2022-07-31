@@ -1,8 +1,9 @@
+import React from "react";
 import Image from "next/image";
 import styles from "./Intro.module.css";
 import MEIMAGE from "./../../public/images/memoji.png";
 
-export const Intro: React.FC<{}> = () => {
+export const Intro: React.FC<{}> = React.memo(() => {
   return (
     <div className={styles.container}>
       <div className={styles.imageDiv}>
@@ -15,4 +16,6 @@ export const Intro: React.FC<{}> = () => {
       </div>
     </div>
   );
-};
+});
+
+Intro.displayName = "Intro";

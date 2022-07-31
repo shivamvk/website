@@ -1,18 +1,19 @@
 import { GetServerSidePropsResult, NextPage } from "next";
 import Head from "next/head";
 import { Home } from "../components/home/";
+import { DATA } from "../data";
 import { ILearning } from "../interfaces/Lotd";
 import { IStory } from "../interfaces/Story";
-import { getLotd } from "../services/learnings";
-import { getStories } from "../services/stories";
+import { ISubintro } from "../interfaces/Subintro";
 import styles from "../styles/Home.module.css";
 
 export interface IProps {
   lotdData: ILearning;
   stories: IStory[];
+  subintro: ISubintro;
 }
 
-const HomePage: NextPage<IProps> = ({ lotdData, stories }) => {
+const HomePage: NextPage<IProps> = ({ lotdData, stories, subintro }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,28 +21,21 @@ const HomePage: NextPage<IProps> = ({ lotdData, stories }) => {
         <meta name="description" content="Explorer | Learner | Writer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Home lotdData={lotdData} stories={stories} />
+      <Home lotdData={lotdData} stories={stories} subintro={subintro} />
     </div>
   );
 };
 
 export default HomePage;
 
-export async function getServerSideProps(): Promise<
+export async function getStaticProps(): Promise<
   GetServerSidePropsResult<IProps>
 > {
-  const lotdData = await getLotd();
-  const storiesData = await getStories();
-  if (lotdData.status === 0) {
-    return {
-      props: {
-        lotdData: lotdData.data,
-        stories: storiesData.data,
-      },
-    };
-  } else {
-    return {
-      notFound: true,
-    };
-  }
+  return {
+    props: {
+      lotdData: DATA.Lotd,
+      stories: DATA.Stories,
+      subintro: DATA.Subintro,
+    },
+  };
 }

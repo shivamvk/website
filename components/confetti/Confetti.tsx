@@ -1,7 +1,8 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import styles from "./Confetti.module.css";
 
-export const Confetti: React.FC<{}> = () => {
+export const Confetti: React.FC<{}> = React.memo(() => {
   const [show, setShow] = useState(false);
   const [posA, setPosA] = useState({ top: 100, right: 100 });
   const [posB, setPosB] = useState({ top: 300, right: 500 });
@@ -57,4 +58,6 @@ export const Confetti: React.FC<{}> = () => {
   ) : (
     <></>
   );
-};
+});
+
+Confetti.displayName = "Confetti";

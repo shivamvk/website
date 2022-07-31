@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import { getCloudinaryUrl } from "../../helpers/helper";
 import { IStory } from "../../interfaces/Story";
@@ -8,7 +9,7 @@ export interface IProps {
   stories: IStory[];
 }
 
-export const Stories: React.FC<IProps> = ({ stories }) => {
+export const Stories: React.FC<IProps> = React.memo(({ stories }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Stories</h2>
@@ -39,4 +40,6 @@ export const Stories: React.FC<IProps> = ({ stories }) => {
       </div>
     </div>
   );
-};
+});
+
+Stories.displayName = "Stories";
